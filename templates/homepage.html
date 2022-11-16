@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="Book Your Travel - Online Booking HTML Template">
+	<meta name="description" content="Book Your Travel - Online Booking HTML Template">
+	<meta name="author" content="themeenergy.com">
+	
+	<title>{{ setting.description }}</title>
+	
+	<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+	<link rel="stylesheet" href="{% static 'css/theme-turqoise.css' %}" id="template-color" />
+	<link rel="stylesheet" href="{% static 'css/lightslider.min.css' %}" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800|Roboto+Slab:400,700&subset=latin,latin-ext,greek-ext,greek,cyrillic,vietnamese,cyrillic-ext">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<script src="https://use.fontawesome.com/e808bf9397.js"></script>
+	<link rel="shortcut icon" href="{{ setting.logo.url}}" />
+	<link rel="stylesheet" href="{% static 'css/styler.css' %}" type="text/css" />
+	
+	 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+
+    {% block content  %}
+
+    {% endblock%}
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="{% static 'js/jquery.uniform.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/jquery.slimmenu.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/lightslider.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/scripts.js' %}"></script>
+	<script type="text/javascript">	
+		(function( $ ) {
+			$(document).ready(function(){
+				$('.form').hide();
+				$('#form1').show();
+				$('.f-item:nth-child(1)').addClass('active');
+				$('.f-item:nth-child(1) span').addClass('checked');		
+
+				$('#hero-gallery').lightSlider({
+					gallery:true,
+					item:1,
+					pager:false,
+					gallery:false,
+					slideMargin: 0,
+					speed:2000,
+					pause:6000,
+					mode: 'fade',
+					auto:true,
+					loop:true,
+					onSliderLoad: function() {
+						$('#hero-gallery').removeClass('cS-hidden');
+					}  
+				});			
+			});
+		})(jQuery);
+	</script>
+	
+	<!-- TEMPLATE STYLES -->
+<!-- TEMPLATE STYLES -->
+<div id="template-styles">
+    <h2> <a href="#"><img class="s-s-icon" src="{% static 'images/settings.png' %}" alt="Style switcher" /></a></h2>
+    <div>
+    <h3>Язык</h3>
+    <ul class="profile-nav">
+    </ul>
+    <ul class="lang-nav">
+      <li class="active"><a href="#" title="English (US)">English (US)</a></li>
+      <li><a href="#" title="English (UK)">English (UK)</a></li>
+      <li><a href="#" title="Deutsch">Deutsch</a></li>
+      <li><a href="#" title="Italiano">Italiano</a></li>
+      <li><a href="#" title="Русский">Русский</a></li>
+    </ul>
+    <h3>Валюта</h3>
+    <ul class="currency-nav">
+      <li class="active"><a href="#" title="$US Dollar">$US Dollar</a></li>
+      <li><a href="#" title="€ Euro">€ Euro</a></li>
+      <li><a href="#" title="£ Pound">£ Pound</a></li>
+    </ul>
+    </div>
+  </div>
+	<script src="{% static 'js/styler.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+﻿{% extends 'homepage.html' %}
+{% load static %}
+{% block content %}
+
+	<!--- loading animation -->
+	<div class="loading">
+		<div class="ball"></div>
+		<div class="ball1"></div>
+	</div>
+	<!--- //loading animation -->
+	
+	{% include 'include/header.html' %}
+
+	<!--slider-->
+	<div class="slider">
+		<ul id="hero-gallery" class="cS-hidden">
+			<li data-thumb="{% static 'images/uploads/slider7.jpg' %}"> 
+				<img src="{% static 'images/uploads/slider7.jpg' %}" alt="" />
+			</li>
+			<li data-thumb="{% static 'images/uploads/slider3.jpg' %}"> 
+				<img src="{% static 'images/uploads/slider3.jpg' %}" alt="" />
+			</li>
+			<li data-thumb="{% static 'images/uploads/slider2.jpg' %}"> 
+				<img src="{% static 'images/uploads/slider2.jpg' %}" alt="" />
+			</li>	
+		</ul>
+	</div>
+	<!--//slider-->
+	
+	<!--search-->
+	<div class="main-search">
+		<div class="wrap">
+		</div>
+	</div>
+	<!--//search-->
+	
+	<!--main-->
+	<main class="main">
+		<div class="wrap">
+			<div class="row">
+				<div class="full-width">
+				
+					<!--latest offers-->
+			
+					<!--//latest offers-->
+					
+					<header class="s-title">
+						<h2>Популярные направления по всему миру</h2>
+					</header>
+					
+					<!--top destinations-->
+					<div class="destinations">
+						<div class="row">
+							<!--column-->
+							{% for location in locations  %}
+							<article class="one-fourth">
+								<figure><a href="location.html" title=""><img src="{{ location.image.url }}" alt="" /></a></figure>
+								<div class="details">
+									<a href="location.html" title="Посмотреть все" class="gradient-button">Посмотреть все</a>
+									<h4>{{ location.title| truncatewords:5}}</h4>
+									<span class="count">1529 отелей</span>
+									<div class="ribbon">
+										<div class="half hotel">
+											<a href="hotels.html" title="View all">
+												<span class="small">От</span>
+												<span class="price">{{ location.price }} {{ location.currency }}</span>
+											</a>
+										</div>
+										<div class="half flight">
+											<a href="flights.html" title="View all">
+												<span class="small">От</span>
+												<span class="price">&#36; 150</span>
+											</a>
+										</div>
+									</div>
+								</div>
+							</article>
+							{% endfor %}
+							<!--//column-->
+							
+							<!--column-->
+							<!--//column-->
+						</div>
+					</div>
+					<!--//top destinations-->
+			
+			
+					<!--info boxes-->
+					<div class="boxes">
+						<div class="row">
+						<!--column-->
+						<article class="one-fourth">
+							<div>
+								<h4>Handpicked Hotels</h4>
+								<p>All Book Your Travel Hotels fulfil strict selection criteria. Each hotel is chosen individually and inclusion cannot be bought. </p>
+							</div>
+						</article>
+						<!--//column-->
+						
+						<!--column-->
+						<article class="one-fourth">
+							<div>
+								<h4>Detailed Descriptions</h4>
+								<p>To give you an accurate impression of the hotel, we endeavor to publish transparent, balanced and precise hotel descriptions. </p>
+							</div>
+						</article>
+						<!--//column-->
+						
+						<!--column-->
+						<article class="one-fourth">
+							<div>
+								<h4>Exclusive Knowledge</h4>
+								<p>We've done our research. Our scouts are always busy finding out more about our hotels, the surroundings and activities on offer nearby.</p>
+							</div>
+						</article>
+						<!--//column-->
+						
+						<!--column-->
+						<article class="one-fourth">
+							<div>
+								<h4>Passionate Service</h4>
+								<p>Book Your Travels's team will cater to your special requests. We offer expert and passionate advice for finding the right hotel. </p>
+							</div>
+						</article>
+						<!--//column-->
+						
+						<!--column-->
+						<article class="one-fourth">
+							<div>
+								<h4>Best Price Guarantee</h4>
+								<p>We offer the best hotels at the best prices. If you find the same room category on the same dates cheaper elsewhere, we will refund the difference. Guaranteed, and quickly. </p>
+							</div>
+						</article>
+						<!--//column-->
+						
+						<!--column-->
+						<article class="one-fourth">
+							<div>
+								<h4>Secure Booking</h4>
+								<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse et maiores expedita, quis, sequi quam vel molestiae aperiam neque sit eaque optio ea blanditiis quidem iure aliquam. Natus, quas pariatur.</p>
+							</div>
+						</article>
+						<!--//column-->
+						
+						<!--column-->
+						<article class="one-fourth">
+							<div>
+								<h4>Benefits for Hoteliers</h4>
+								<p>We provide a cost-effective model, a network of over 5000 partners and a personalised account management service to help you optimise your revenue.</p>
+							</div>
+						</article>
+						<!--//column-->
+						
+						<!--column-->
+						<article class="one-fourth">
+							<div>
+								<h4>Any Questions?</h4>
+								<p>Call us on <em>1-555-555-555</em> for individual, tailored advice for your perfect stay or <a href="contact.html" title="Contact">send us a message</a> with your hotel booking query.</p>
+							</div>
+						</article>
+						<!--//column-->
+					</div>
+				</div>
+					<!--//info boxes-->
+				</div>
+			</div>
+		</div>
+	</main>
+	<!--//main-->
+	
+	
+	{% include 'include/footer.html' %}
+	{% endblock %}
