@@ -19,11 +19,10 @@ def register(request ):
         last_name = request.POST.get('last_name')
         email = request.POST.get('email')
         phone = request.POST.get('phone')
-        profile_image = request.FILES.get('profile_image')
         password = request.POST.get('password')
         password2 = request.POST.get('password2')
         if password == password2:
-            user = User.objects.create(username = username, first_name = first_name, last_name = last_name, email = email, phone = phone, profile_image = profile_image)
+            user = User.objects.create(username = username, first_name = first_name, last_name = last_name, email = email, phone = phone,)
             user.set_password(password)
             user.save()
             return redirect('login')
@@ -31,6 +30,7 @@ def register(request ):
 
 def login(request):
     setting = Setting.objects.latest('id')
+    locations = Locations.objects.all().order_by("?")
     if request.method == "POST":
         username = request.POST.get('username')
         password = request.POST.get('password')
@@ -43,10 +43,10 @@ def login(request):
             return redirect('error.html')
     context = {
         'setting' : setting,
+        'locations' : locations
+
     }
     return render(request, 'login.html', context)
-
-
 
 
 def account(request, username):
@@ -69,12 +69,10 @@ def account_update(request, id):
             last_name = request.POST.get('last_name')
             email = request.POST.get('email')
             phone = request.POST.get('phone')
-            profile_image = request.FILES.get('profile_image')
             user = User.objects.get(id = id)
             user.username = username 
             user.first_name = first_name
             user.last_name = last_name
-            user.profile_image = profile_image
             user.email = email 
             user.phone = phone 
             user.save()
