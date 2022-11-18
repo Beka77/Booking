@@ -12,7 +12,7 @@
 				<nav>
 					{% if request.user.is_authenticated %}
 					<ul class="profile-nav">
-						<li class="active"><a href="#" title="Профиль">Профиль</a></li>
+						<li class="active"><a href="{% url 'account' request.user.username %}" title="Профиль">Профиль</a></li>
 					</ul>
 					<ul class="currency-nav">
 						<li class="active"><a href="{% url 'logout'  %}" title="регистрироваться">Выйти</a></li>
@@ -86,9 +86,9 @@
 									<div class="one-fifth">
 										<p>СТРАНИЦЫ ПОЛЬЗОВАТЕЛЯ</p>
 										<ul>
-											<li><a href="login.html" title="Войти">Войти</a></li>
-											<li><a href="register.html" title="регистрироваться">регистрироваться</a></li>
-											<li><a href="my_account.html" title="Профиль">Профиль</a></li>
+											<li><a href="{% url 'login' %}" title="Войти">Войти</a></li>
+											<li><a href="{% url 'register' %}" title="регистрироваться">регистрироваться</a></li>
+											<li><a href="{% url 'account' request.user.username %}" title="Профиль">Профиль</a></li>
 										</ul>
 									</div>
 									<div class="one-fifth">

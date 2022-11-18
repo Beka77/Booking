@@ -56,7 +56,7 @@ def account(request, username):
         'user' : user,
         'setting' : setting,
     }
-    return render(request, 'my_account.html', context) 
+    return render(request, 'account.html', context) 
 
 
 def account_update(request, id):

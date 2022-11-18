@@ -1,0 +1,196 @@
+﻿{% extends 'homepage.html' %}
+{% load static %}
+{% block content %}
+	<!--- loading animation -->
+	<div class="loading">
+		<div class="ball"></div>
+		<div class="ball1"></div>
+	</div>
+	<!--- //loading animation -->
+	
+	<!--header-->
+	{% include 'include/header.html' %}
+
+	
+	<!--main-->
+	<main class="main">		
+		<div class="wrap">
+			<!--breadcrumbs-->
+			<nav class="breadcrumbs">
+				<!--crumbs-->
+				<ul>
+					<li><a href="{% url 'index'  %}" title="Home">Дом</a></li>
+					<li><a href="{% url 'account' request.user.username %}" >Профиль</a></li>                                    
+				</ul>
+				<!--//crumbs-->
+			</nav>
+			<!--//breadcrumbs-->
+
+			<div class="row">
+				<!--three-fourth content-->
+				<section class="three-fourth">
+				
+					<h1>Профиль</h1>
+					
+					<!--inner navigation-->
+					<nav class="inner-nav">
+						<ul>
+							<li><a href="#MySettings" title="Settings">Данные об аккаунте</a></li>
+						</ul>
+					</nav>
+					<!--//inner navigation-->
+					<!--MySettings-->
+					<section id="MySettings" class="tab-content">
+						<article class="mysettings">
+							<h2>Настройки</h2>
+							<table>
+								<tr>
+									<th>Имя пользователя:</th>
+									<td>{{ user.username }}
+										<!--edit fields-->
+										<div class="edit_field" id="field1">
+											<label for="new_name">Your new name:</label>
+											<input type="text" id="new_name"/>
+											<input type="submit" value="save" class="gradient-button" id="submit1"/>
+											<a href="#">Cancel</a>
+										</div>
+										<!--//edit fields-->
+									</td>
+									<td><a href="#field1" class="gradient-button edit">Edit</a></td>
+								</tr>
+								<tr>
+									<th>Имя:</th>
+									<td>{{ user.first_name }}
+										<!--edit fields-->
+										<div class="edit_field" id="field1">
+											<label for="new_name">Your new name:</label>
+											<input type="text" id="new_name"/>
+											<input type="submit" value="save" class="gradient-button" id="submit1"/>
+											<a href="#">Cancel</a>
+										</div>
+										<!--//edit fields-->
+									</td>
+									<td><a href="#field1" class="gradient-button edit">Edit</a></td>
+								</tr>
+								<tr>
+									<th>Фамилия:</th>
+									<td>{{ user.last_name }}
+										<!--edit fields-->
+										<div class="edit_field" id="field2">
+											<label for="new_last_name">Your new name:</label>
+											<input type="text" id="new_last_name"/>
+											<input type="submit" value="save" class="gradient-button" id="submit2"/>
+											<a href="#">Cancel</a>
+										</div>
+										<!--//edit fields-->
+									</td>
+									<td><a href="#field2" class="gradient-button edit">Edit</a></td>
+								</tr>
+								<tr>
+									<th>Email: </th>
+									<td>{{ user.email }}
+										<!--edit fields-->
+										<div class="edit_field" id="field3">
+											<label for="new_email">Your new email:</label>
+											<input type="text" id="new_email"/>
+											<input type="submit" value="save" class="gradient-button" id="submit3"/>
+											<a href="#">Cancel</a>
+										</div>
+										<!--//edit fields-->
+									</td>
+									<td><a href="#field3" class="gradient-button edit">Edit</a></td>
+								</tr>
+								<tr>
+									<th>Пароль: </th>
+									<td>{{ user.password }}
+										<!--edit fields-->
+										<div class="edit_field" id="field4">
+											<label for="new_password">Your new password:</label>
+											<input type="password" id="new_password"/>
+											<input type="submit" value="save" class="gradient-button" id="submit4"/>
+											<a href="#">Cancel</a>
+										</div>
+										<!--//edit fields-->
+									</td>
+									<td><a href="#field4" class="gradient-button edit">Edit</a></td>
+								</tr>	
+								<tr>
+									<th>Номер телефона:</th>
+									<td>{{ user.phone }}
+										<!--edit fields-->
+										<div class="edit_field" id="field8">
+											<label for="new_country">Your new country:</label>
+											<input type="text" id="new_country"/>
+											<input type="submit" value="save" class="gradient-button" id="submit8"/>
+											<a href="#">Cancel</a>
+										</div>
+										<!--//edit fields-->
+									</td>
+									<td><a href="#field8" class="gradient-button edit">Edit</a></td>
+								</tr>
+							</table>
+
+						</article>
+					</section>
+					<!--//MySettings-->
+					
+				</section>
+				<!--//three-fourth content-->
+				
+				<!--sidebar-->
+				<aside class="one-fourth right-sidebar">
+					<!--Need Help Booking?-->
+					<article class="widget">
+						<h4>Нужна помощь?</h4>
+						<p>Позвоните в нашу службу поддержки клиентов по указанному ниже номеру, чтобы поговорить с одним из наших консультантов, который поможет вам со всеми вашими потребностями в отпуске.</p>
+						<p class="number">+996 778 010039</p>
+					</article>
+					<!--//Need Help Booking?-->
+					
+					<!--Why Book with us?-->
+					<article class="widget">
+						<h4>Зачем бронировать у нас?</h4>
+						<h5>Низкие темпы</h5>
+						<p>Получите лучшие цены или получите возмещение.<br>Нет платы за бронирование. Экономить деньги!</p>
+						<h5>Самый большой выбор</h5>
+						<p>140 000+ отелей по всему миру<br>130+ авиакомпаний<br>Более 3 миллионов отзывов гостей</p>
+						<h5>Мы всегда здесь</h5>
+						<p>Звоните или пишите нам в любое время<br>Получите круглосуточную поддержку до, во время и после поездки</p>
+					</article>
+					<!--//Why Book with us?-->
+					
+				</aside>
+				<!--//sidebar-->
+			</div>
+			<!--//main content-->
+		</div>
+	</main>
+	<!--//main-->
+	
+	<!--footer-->
+	<footer class="footer">
+		<div class="wrap">
+			<div class="row">
+				<!--column-->
+				<article class="one-fourth">
+					<h6>Book Your Travel</h6>
+					<p>1400 PennsylSUVia Ave. Washington, DC</p>
+					<p><em>P:</em> 24/7 customer support: 1-555-555-5555</p>
+					<p><em>E:</em> <a href="#" title="booking@mail.com">booking@mail.com</a></p>
+				</article>
+				<!--//column-->
+				
+				<!--column-->
+				<article class="one-fourth">
+					<h6>Customer support</h6>
+					<ul>
+						<li><a href="#" title="Faq">Faq</a></li>
+						<li><a href="#" title="How do I make a reservation?">How do I make a reservation?</a></li>
+						<li><a href="#" title="Payment options">Payment options</a></li>
+						<li><a href="#" title="Booking tips">Booking tips</a></li>
+					</ul>
+				</article>
+				<!--//column-->
+				{% include 'include/footer.html' %}
+	<!-- TEMPLATE STYLES -->
+{% endblock %}
