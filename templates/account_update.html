@@ -1,0 +1,54 @@
+{% extends 'homepage.html' %}
+{% load static %}
+{% block content %}
+
+    
+    
+    
+    <div class="lightbox" style="display:block; overflow: auto;">
+		<div class="lb-wrap">
+			<a href="#" class="close">x</a>
+			<div class="lb-content">
+				<form class="row" method="POST">
+				{% csrf_token  %}
+					<h3>Обновление аккаунта</h3>
+					<div class="f-item full-width">
+						<label for="f_name">Имя пользователя</label>
+						<input type="text" id="username" name="username" value="{{ user.username }}"/>
+					</div>
+					<div class="f-item full-width">
+						<label for="f_name">Имя</label>
+						<input type="text" id="first_name" name="first_name" value="{{ user.first_name }}"/>
+					</div>
+					<div class="f-item full-width">
+						<label for="f_name">Фамилия</label>
+						<input type="text" id="last_name" name="last_name" value="{{ user.last_name }}"/>
+					</div>
+					<div class="f-item full-width">
+						<label for="email">E-mail</label>
+						<input type="email" id="email" name="email" value="{{ user.email }}" />
+					</div>
+					<div class="row">
+					  </div>
+					  <div class="f-item full-width">
+						<label for="password">Номер телефона</label>
+						<input type="number" id="phone" name="phone" value="{{ user.phone }}"/>
+					</div>
+					<div class="f-item full-width">
+						<label for="password">Пароль</label>
+						<input type="password" id="password" name="password" />
+					</div>
+					<div class="f-item full-width">
+						<label for="password">Подтвердите пароль</label>
+						<input type="password" id="password2" name="password2" />
+					</div>
+					<div class="f-item checkbox full-width">
+						<div class="form-group">
+							<button class="btn btn-dark btn-lg btn-block mt-15" type="submit" name = "update">Обновить</button>
+						  </div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+{% endblock %}

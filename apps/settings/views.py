@@ -10,10 +10,12 @@ def index(request):
     locations = Locations.objects.all().order_by("?")
     currency = Currency.objects.all()
     users = User.objects.all()
+    hotels = Hotels.objects.all()
     context = {
         'setting' : setting,
         'locations' : locations,
         'currency' : currency,
         'users' : users,
+        'hotels' : hotels,
     }
     return render (request, 'index.html', context) 

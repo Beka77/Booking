@@ -59,8 +59,8 @@ def account(request, username):
     return render(request, 'account.html', context) 
 
 
-def account_update(request, id):
-    user = User.objects.get(id = id)
+def account_update(request, username):
+    user = User.objects.get(username = username)
     setting = Setting.objects.latest('id')
     if request.method == "POST":
         if 'update' in request.POST:
@@ -69,7 +69,7 @@ def account_update(request, id):
             last_name = request.POST.get('last_name')
             email = request.POST.get('email')
             phone = request.POST.get('phone')
-            user = User.objects.get(id = id)
+            user = User.objects.get(username = username)
             user.username = username 
             user.first_name = first_name
             user.last_name = last_name
@@ -78,7 +78,7 @@ def account_update(request, id):
             user.save()
             return redirect('account', user.username)
         if 'delete' in request.POST:
-            user = User.objects.get(id = id)
+            user = User.objects.get(username = username)
             user.delete()
             return redirect('index')
         if 'update_password' in request.POST:
@@ -87,7 +87,7 @@ def account_update(request, id):
             confirm_password = request.POST.get('confirm_password')
             if new_password == confirm_password:
                 try:
-                    user = User.objects.get(username = request.user)
+                    user = User.objects.get(username = request.user.username)
                     if user.check_password(password):
                         user.set_password(new_password)
                         user.save()
@@ -102,5 +102,5 @@ def account_update(request, id):
         'user' : user,
         'setting' : setting,
     }
-    return render(request, 'page-account-edit.html', context)
+    return render(request, 'account_update.html', context)
 

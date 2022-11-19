@@ -77,8 +77,67 @@
 							</article>
 							{% endfor %}
 							<!--//column-->
-							
-							<!--column-->
+							<header class="s-title">
+								<h2>Горячие предложение</h2>
+							  </header>
+							  
+							  <!--column-->
+							  {% for hotel in hotels %}
+							  {% if hotel.best == True %}
+							  <article class="one-fourth promo">
+								<div class="ribbon-small">- {{ hotel.sale }}%</div>
+								<figure><a href="hot_deals.html" title=""><img src="{{ hotel.image.url }}" alt="" /></a></figure>
+								<div class="details">
+								  <a href="{% url 'hotel_details' hotel.id  %}" title="View all" class="gradient-button">Хочу</a>
+								  <h4>{{ hotel.title }}</h4>
+								  <span class="count">{{ hotel.place }}</span>
+								  <div class="ribbon">
+									<div class="half hotel">
+									  <a href="hotels.html" title="View all">
+										<span class="small">from</span>
+										<span class="price">&#36; {{ hotel.price }}</span>
+									  </a>
+									</div>
+									<div class="half flight">
+									  <a href="flights.html" title="View all">
+										<span class="small">from</span>
+										<span class="price">&#36; {{ hotel.airplane_prices }}</span>
+									  </a>
+									</div>
+								  </div>
+								</div>
+							  </article>
+							  {% endif %}
+							  {% endfor %}
+							  <!--//column-->
+							  {% for hotel in hotels %}
+							  {% if hotel.best == False %}
+							  <article class="one-fourth promo">
+								<div class="ribbon-small">- {{ hotel.sale }}%</div>
+								<figure><a href="hot_deals.html" title=""><img src="{{ hotel.image.url }}" alt="" /></a></figure>
+								<div class="details">
+								  <a href="{% url 'hotel_details' hotel.id  %}" title="View all" class="gradient-button">Хочу</a>
+								  <h4>{{ hotel.title }}</h4>
+								  <span class="count">{{ hotel.place }}</span>
+								  <div class="ribbon">
+									<div class="half hotel">
+									  <a href="hotels.html" title="View all">
+										<span class="small">from</span>
+										<span class="price">&#36; {{ hotel.price }}</span>
+									  </a>
+									</div>
+									<div class="half flight">
+									  <a href="flights.html" title="View all">
+										<span class="small">from</span>
+										<span class="price">&#36; {{ hotel.airplane_prices }}</span>
+									  </a>
+									</div>
+								  </div>
+								</div>
+							  </article>
+							  {% endif %}
+							  {% endfor %}
+							  <!--column-->
 							<!--//column-->
 						</div>
 					</div>
@@ -91,8 +150,8 @@
 						<!--column-->
 						<article class="one-fourth">
 							<div>
-								<h4>Handpicked Hotels</h4>
-								<p>All Book Your Travel Hotels fulfil strict selection criteria. Each hotel is chosen individually and inclusion cannot be bought. </p>
+								<h4>Отобранные отели</h4>
+								<p>Все отели Book Your Travel соответствуют строгим критериям отбора. Каждый отель выбирается индивидуально, и включение не может быть куплено. </p>
 							</div>
 						</article>
 						<!--//column-->
@@ -100,8 +159,8 @@
 						<!--column-->
 						<article class="one-fourth">
 							<div>
-								<h4>Detailed Descriptions</h4>
-								<p>To give you an accurate impression of the hotel, we endeavor to publish transparent, balanced and precise hotel descriptions. </p>
+								<h4>Подробные описания</h4>
+								<p>Чтобы дать вам точное представление об отеле, мы стараемся публиковать прозрачные, сбалансированные и точные описания отелей.. </p>
 							</div>
 						</article>
 						<!--//column-->
@@ -109,8 +168,8 @@
 						<!--column-->
 						<article class="one-fourth">
 							<div>
-								<h4>Exclusive Knowledge</h4>
-								<p>We've done our research. Our scouts are always busy finding out more about our hotels, the surroundings and activities on offer nearby.</p>
+								<h4>Эксклюзивные знания</h4>
+								<p>Мы провели наше исследование. Наши разведчики всегда заняты тем, чтобы узнать больше о наших отелях, окрестностях и мероприятиях, предлагаемых поблизости.</p>
 							</div>
 						</article>
 						<!--//column-->
@@ -118,8 +177,8 @@
 						<!--column-->
 						<article class="one-fourth">
 							<div>
-								<h4>Passionate Service</h4>
-								<p>Book Your Travels's team will cater to your special requests. We offer expert and passionate advice for finding the right hotel. </p>
+								<h4>страстный сервис</h4>
+								<p>	Команда Book Your Travels удовлетворит ваши особые запросы. Мы предлагаем экспертные и страстные советы по поиску подходящего отеля. </p>
 							</div>
 						</article>
 						<!--//column-->
@@ -127,8 +186,8 @@
 						<!--column-->
 						<article class="one-fourth">
 							<div>
-								<h4>Best Price Guarantee</h4>
-								<p>We offer the best hotels at the best prices. If you find the same room category on the same dates cheaper elsewhere, we will refund the difference. Guaranteed, and quickly. </p>
+								<h4>Гарантия лучшей цены</h4>
+								<p>Мы предлагаем лучшие отели по лучшим ценам. Если вы найдете номер той же категории в те же даты дешевле в другом месте, мы вернем разницу. Гарантированно и быстро.</p>
 							</div>
 						</article>
 						<!--//column-->
@@ -136,7 +195,7 @@
 						<!--column-->
 						<article class="one-fourth">
 							<div>
-								<h4>Secure Booking</h4>
+								<h4>Безопасное бронирование</h4>
 								<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse et maiores expedita, quis, sequi quam vel molestiae aperiam neque sit eaque optio ea blanditiis quidem iure aliquam. Natus, quas pariatur.</p>
 							</div>
 						</article>
@@ -145,8 +204,8 @@
 						<!--column-->
 						<article class="one-fourth">
 							<div>
-								<h4>Benefits for Hoteliers</h4>
-								<p>We provide a cost-effective model, a network of over 5000 partners and a personalised account management service to help you optimise your revenue.</p>
+								<h4>Преимущества для отельеров</h4>
+								<p>Мы предлагаем экономически эффективную модель, сеть из более чем 5000 партнеров и персонализированную службу управления учетными записями, чтобы помочь вам оптимизировать ваши доходы.</p>
 							</div>
 						</article>
 						<!--//column-->
@@ -154,8 +213,8 @@
 						<!--column-->
 						<article class="one-fourth">
 							<div>
-								<h4>Any Questions?</h4>
-								<p>Call us on <em>1-555-555-555</em> for individual, tailored advice for your perfect stay or <a href="contact.html" title="Contact">send us a message</a> with your hotel booking query.</p>
+								<h4>Любые вопросы?</h4>
+								<p>Позвоните нам<em>+996 778 010039</em> для индивидуального, индивидуального совета для вашего идеального пребывания или <a href="contact.html" title="Contact">отправить нам сообщение</a> с вашим запросом бронирования отеля.</p>
 							</div>
 						</article>
 						<!--//column-->

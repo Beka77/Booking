@@ -31,11 +31,10 @@
 				<section class="three-fourth">
 				
 					<h1>Профиль</h1>
-					
 					<!--inner navigation-->
 					<nav class="inner-nav">
 						<ul>
-							<li><a href="#MySettings" title="Settings">Данные об аккаунте</a></li>
+							<li><a href="{%url 'account_update' user.username%}" title="Settings">Данные об аккаунте</a></li>
 						</ul>
 					</nav>
 					<!--//inner navigation-->
@@ -48,88 +47,32 @@
 									<th>Имя пользователя:</th>
 									<td>{{ user.username }}
 										<!--edit fields-->
-										<div class="edit_field" id="field1">
-											<label for="new_name">Your new name:</label>
-											<input type="text" id="new_name"/>
-											<input type="submit" value="save" class="gradient-button" id="submit1"/>
-											<a href="#">Cancel</a>
-										</div>
-										<!--//edit fields-->
-									</td>
-									<td><a href="#field1" class="gradient-button edit">Edit</a></td>
 								</tr>
 								<tr>
 									<th>Имя:</th>
 									<td>{{ user.first_name }}
-										<!--edit fields-->
-										<div class="edit_field" id="field1">
-											<label for="new_name">Your new name:</label>
-											<input type="text" id="new_name"/>
-											<input type="submit" value="save" class="gradient-button" id="submit1"/>
-											<a href="#">Cancel</a>
-										</div>
-										<!--//edit fields-->
-									</td>
-									<td><a href="#field1" class="gradient-button edit">Edit</a></td>
 								</tr>
 								<tr>
 									<th>Фамилия:</th>
 									<td>{{ user.last_name }}
-										<!--edit fields-->
-										<div class="edit_field" id="field2">
-											<label for="new_last_name">Your new name:</label>
-											<input type="text" id="new_last_name"/>
-											<input type="submit" value="save" class="gradient-button" id="submit2"/>
-											<a href="#">Cancel</a>
-										</div>
-										<!--//edit fields-->
-									</td>
-									<td><a href="#field2" class="gradient-button edit">Edit</a></td>
 								</tr>
 								<tr>
 									<th>Email: </th>
 									<td>{{ user.email }}
-										<!--edit fields-->
-										<div class="edit_field" id="field3">
-											<label for="new_email">Your new email:</label>
-											<input type="text" id="new_email"/>
-											<input type="submit" value="save" class="gradient-button" id="submit3"/>
-											<a href="#">Cancel</a>
-										</div>
-										<!--//edit fields-->
-									</td>
-									<td><a href="#field3" class="gradient-button edit">Edit</a></td>
 								</tr>
-								<tr>
-									<th>Пароль: </th>
-									<td>{{ user.password }}
-										<!--edit fields-->
-										<div class="edit_field" id="field4">
-											<label for="new_password">Your new password:</label>
-											<input type="password" id="new_password"/>
-											<input type="submit" value="save" class="gradient-button" id="submit4"/>
-											<a href="#">Cancel</a>
-										</div>
-										<!--//edit fields-->
-									</td>
-									<td><a href="#field4" class="gradient-button edit">Edit</a></td>
-								</tr>	
 								<tr>
 									<th>Номер телефона:</th>
 									<td>{{ user.phone }}
-										<!--edit fields-->
-										<div class="edit_field" id="field8">
-											<label for="new_country">Your new country:</label>
-											<input type="text" id="new_country"/>
-											<input type="submit" value="save" class="gradient-button" id="submit8"/>
-											<a href="#">Cancel</a>
-										</div>
-										<!--//edit fields-->
-									</td>
-									<td><a href="#field8" class="gradient-button edit">Edit</a></td>
 								</tr>
 							</table>
+							<div class="form-group">
+								<button class="btn btn-dark btn-lg btn-block mt-15" type="submit" style="margin-left: 500px; "><a href="{%url 'account_update' user.username%}" >Обновить аккаунт </a></button>
+							  </div>
 
+
+
+
+							  
 						</article>
 					</section>
 					<!--//MySettings-->
