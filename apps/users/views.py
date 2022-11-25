@@ -6,31 +6,37 @@ from django.http import HttpResponse
 from apps.locations.models import Locations
 # Create your views here.
 
-def register(request ):
+def register(request):
     setting = Setting.objects.latest('id')
-    locations = Locations.objects.all().order_by("?")
-    context = {
-        'setting' : setting,
-        'locations' : locations
-    }
     if request.method == "POST":
         username = request.POST.get('username')
-        first_name = request.POST.get('first_name')
-        last_name = request.POST.get('last_name')
         email = request.POST.get('email')
-        phone = request.POST.get('phone')
         password = request.POST.get('password')
-        password2 = request.POST.get('password2')
-        if password == password2:
-            user = User.objects.create(username = username, first_name = first_name, last_name = last_name, email = email, phone = phone,)
-            user.set_password(password)
-            user.save()
-            return redirect('login')
+        confirm_password = request.POST.get('confirm_password')
+        if password == confirm_password:
+            if username and email and password and confirm_password:
+                try:
+                    user = User.objects.create(username = username, email = email)
+                    user.set_password(password)
+                    user.save()
+                    user = User.objects.get(username = username)
+                    user = authenticate(username = username, password = password)
+                    login(request, user)
+                    return redirect('index')
+                except:
+                    return redirect('register_error')
+            else:
+                return redirect('register_error')
+        else:
+            return redirect('register_error')
+    context = {
+        'setting' : setting,
+    }
     return render(request, 'register.html', context)
+
 
 def login(request):
     setting = Setting.objects.latest('id')
-    locations = Locations.objects.all().order_by("?")
     if request.method == "POST":
         username = request.POST.get('username')
         password = request.POST.get('password')
@@ -40,14 +46,11 @@ def login(request):
             login(request, user)
             return redirect('index')
         except:
-            return redirect('error.html')
+            return redirect('user_not_found')
     context = {
         'setting' : setting,
-        'locations' : locations
-
     }
     return render(request, 'login.html', context)
-
 
 def account(request, username):
     setting = Setting.objects.all()

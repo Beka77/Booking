@@ -22,7 +22,7 @@
 						<li class="active"><a href="{% url 'login' %}" title="Войти">Войти</a></li>
 					</ul>
 					<ul class="currency-nav">
-						<li class="active"><a href="{% url 'register'  %}" title="регистрироваться">регистрироваться</a></li>
+						<li class="active"><a href="{% url 'register'  %}" title="регистрироваться">Регистрироваться</a></li>
 					</ul>
 					{% endif %}
 				</nav>
@@ -41,7 +41,7 @@
 			<!--contact-->
 			<div class="contact">
 				<span>24/7 Номер службы поддержки</span>
-				<span class="number">+996 778 010039</span>
+				<h6 class="number">Телефон:<a href="tel:+996 778 010039"> +996 778 010039</a></h6>
 			</div>
 			<!--//contact-->
 		</div>
@@ -50,29 +50,19 @@
 		<nav class="main-nav">
 			<div class="wrap">
 				<ul class="slimmenu" id="nav">
-					<li><a href="hotels.html" title="Отели">Отели</a>
+					<li><a href="{% url 'index' %}" title="Отели">Домой</a>
 					</li>
-					<li><a href="flights.html" title="Рейсы">Рейсы</a></li>
-					<li><a href="cruises.html" title="Круизы">Круизы</a></li>
-					<li><a href="car_rentals.html" title="Car rental">Прокат автомобилей</a></li>
+					<li><a href="{% url 'hotel' %}" title="Рейсы">Отели</a></li>
+					<li><a href="{% url 'cruises' %}" title="Круизы">Круизы</a></li>
+					<li><a href="{% url 'car' %}" title="Car rental">Прокат автомобилей</a></li>
 					<li><a href="locations.html" title="Места">Места</a>
-						<ul>
-							<li><a href="location.html" title="Одно место">Одно место</a>
-						</ul>
 					</li>
-					<li><a href="hot_deals.html" title="Горячие предложения">Горячие предложения</a></li>
 					<li class="has-mega"><a href="#" title="Страницы">Страницы</a>
 						<ul class="mega">
 							<li>
 								<div class="row">
 									<div class="one-fifth">
-										<p>ОБЩИЕ СТРАНИЦЫ</p>
-										<ul>
-											<li><a href="page_left_sidebar.html" title="Страница с левой боковой панелью">Страница с левой боковой панелью</a></li>
-											<li><a href="page_right_sidebar.html" title="Страница с правой боковой панелью">Страница с правой боковой панелью</a></li>
-											<li><a href="page_both_sidebars.html" title="Страница с обеими боковыми панелями">Страница с обеими боковыми панелями</a></li>
-											<li><a href="page_no_sidebars.html" title="Страница без боковых панелей">Страница без боковых панелей</a></li>
-										</ul>
+										
 									</div>
 									<div class="one-fifth">
 										<p>	СПИСОК МАКЕТОВ</p>
@@ -81,21 +71,6 @@
 											<li><a href="hotels_3col.html" title="Листинг 3 столбца">Листинг 3 столбца</a></li>
 											<li><a href="hotels.html" title="Листинг 4 столбца">Листинг 4 столбца</a></li>
 											<li><a href="hotel.html" title="Единый листинг">Единый листинг</a></li>
-										</ul>
-									</div>
-									<div class="one-fifth">
-										<p>СТРАНИЦЫ ПОЛЬЗОВАТЕЛЯ</p>
-										<ul>
-											<li><a href="{% url 'login' %}" title="Войти">Войти</a></li>
-											<li><a href="{% url 'register' %}" title="регистрироваться">регистрироваться</a></li>
-											<li><a href="" title="Профиль">Профиль</a></li>
-										</ul>
-									</div>
-									<div class="one-fifth">
-										<p>СПЕЦИАЛЬНЫЕ СТРАНИЦЫ</p>
-										<ul>
-											<li><a href="search_results.html" title="Результаты поиска гостиницы">Результаты поиска гостиницы</a></li>
-											<li><a href="search_results_flights.html" title="Результаты поиска рейсов">Результаты поиска рейсов</a></li>
 										</ul>
 									</div>
 									<div class="one-fifth">
@@ -111,11 +86,8 @@
 							</li>
 						</ul>
 					</li>
-					<li><a href="contact.html" title="Контакты">Контакты</a></li>
+					<li><a href="{% url 'contact' %}" title="Контакты">Контакты</a></li>
 					<li><a href="blog.html" title="Блог">Блог</a>
-						<ul>
-							<li><a href="blogx_single.html" title="Один пост">Один пост</a>
-						</ul>
 					</li>
 				</ul>
 			</div>

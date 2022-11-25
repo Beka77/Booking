@@ -1,4 +1,4 @@
-﻿{% extends 'homepage.html' %}
+{% extends 'homepage.html' %}
 {% load static %}
 {% block content %}
 	<!--- loading animation -->
@@ -9,7 +9,7 @@
 	<!--- //loading animation -->
 	
 	<!--header-->
-	{% include 'include/header.html' %}
+	
 
 	<!--//header-->
 	
@@ -21,18 +21,17 @@
 				<section class="error">
 					<!--Error type-->
 					<div class="error-type">
-						<h1>404</h1>
-						<p>Страница не найдена</p>
+						<h1>401 </h1>
+						<p>Ошибка регистрации</p>
 					</div>
 					<!--//Error type-->
 					
 					<!--Error content-->
 					<div class="error-content">
-						<h2>Упс, страница которую  вы искали не найдена..</h2>
-						<h3>Не волнуйся. Вы, вероятно, где-то ошиблись.</h3>
+						<h2>Упс, Произошла ошибка при регистрации пользователя. </h2>
 						<ul>
-							<li>Если вы ввели адрес, проверьте правильность написания. Может просто опечатка.</li>
-							<li>Если вы перешли по ссылке, возможно, она не работает. Пожалуйста <a href="#">свяжитесь с нами</a> и мы это исправим.</li>
+							<li>Проверьте что вы указали все данные, логин с таким именем существует и также пароли не должны различаться.</li>
+							<small><span class="text-muted me-2">У вас уже есть аккаунт?</span> <a href="{% url 'login' %}" class="text-dark fw-bold">Войти</a></small>
 							<li>Если вы не уверены, что ищете,<a href="{% url 'index' %}"> вернуться на главную страницу</a>.</li>
 						</ul>
 					</div>
@@ -45,7 +44,6 @@
 	<!--//main-->
 	
 	<!--footer-->
-	{% include 'include/footer.html' %}
 	
 	<!---footer-->
 	
