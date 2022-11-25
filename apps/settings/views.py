@@ -4,7 +4,9 @@ from apps.hotels.models import Hotels
 from apps.settings.models import Currency
 from apps.locations.models import Locations
 from apps.users.models import User
+from apps.cars.models import Car
 from django.core.mail import send_mail
+from django.db.models import Q
 
 # Create your views here.
 def index(request):
@@ -13,12 +15,14 @@ def index(request):
     currency = Currency.objects.all()
     users = User.objects.all()
     hotels = Hotels.objects.all()
+    car = Car.objects.all()
     context = {
         'setting' : setting,
         'locations' : locations,
         'currency' : currency,
         'users' : users,
         'hotels' : hotels,
+        'car' : car
     }
     return render (request, 'index.html', context) 
 
@@ -53,3 +57,19 @@ def contact(request):
         'setting' : setting
     }
     return render (request, 'contact.html', context) 
+
+
+def search(request):
+    setting = Setting.objects.latest('id')
+    locations = Locations.objects.all()
+    car = Car.objects.all()
+    search_key = request.POST.get('key')
+    if search_key:
+        locations = Locations.objects.filter(Q(title_icontains = search_key))
+        car = Car.objects.filter(Q(title_icontains = search_key))
+    context = {
+        'setting' : setting,
+        'locations' : locations,
+        'car' : car,
+    }
+    return render(request, 'search_results.html', context)

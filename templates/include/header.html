@@ -31,9 +31,9 @@
 			
 			<!--search-->
 			<div class="search">
-				<form id="search-form" method="get" action="search-form">
-					<input type="search" placeholder="Search entire site here" name="site_search" id="site_search" /> 
-					<input type="submit" id="submit-site-search" value="submit-site-search" name="submit-site-search"/>
+				<form id="search-form" action="{% url 'search' %}" method="POST">
+					<input type="search"  placeholder="искать...."  id="site_search" /> 
+					<input type="submit" id="submit-site-search" value="submit-site-search" name="key"/>
 				</form>
 			</div>
 			<!--//search-->
@@ -52,7 +52,7 @@
 				<ul class="slimmenu" id="nav">
 					<li><a href="{% url 'index' %}" title="Отели">Домой</a>
 					</li>
-					<li><a href="{% url 'hotel' %}" title="Рейсы">Отели</a></li>
+					<li><a href="" title="Рейсы">Отели</a></li>
 					<li><a href="{% url 'cruises' %}" title="Круизы">Круизы</a></li>
 					<li><a href="{% url 'car' %}" title="Car rental">Прокат автомобилей</a></li>
 					<li><a href="locations.html" title="Места">Места</a>
