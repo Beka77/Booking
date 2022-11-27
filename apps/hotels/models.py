@@ -22,3 +22,18 @@ class Hotels(models.Model):
     class Meta:
         verbose_name = 'Отель'
         verbose_name_plural = 'Отели'     
+
+
+
+        
+class HotelImage(models.Model):
+    title = models.CharField(max_length=255,blank=True,null=True)
+    image = models.ImageField(upload_to='hotel_images/')
+    hotel = models.ForeignKey(Hotels,on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.title 
+
+    class Meta:
+        verbose_name = 'Дополнительноe фото'
+        verbose_name_plural = 'Дополнительные фотографии'

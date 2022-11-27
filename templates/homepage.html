@@ -67,6 +67,72 @@
 		})(jQuery);
 	</script>
 	
+	<script type="text/javascript">
+
+	function initialize() {
+		var secheltLoc = new google.maps.LatLng(49.47216, -123.76307);
+
+		var myMapOptions = {
+			 zoom: 15
+			,center: secheltLoc
+			,mapTypeId: google.maps.MapTypeId.ROADMAP
+		};
+		var theMap = new google.maps.Map(document.getElementById("map_canvas"), myMapOptions);
+
+
+		var marker = new google.maps.Marker({
+			map: theMap,
+			draggable: true,
+			position: new google.maps.LatLng(49.47216, -123.76307),
+			visible: true
+		});
+
+		var boxText = document.createElement("div");
+		boxText.innerHTML = "<strong>Best ipsum hotel</strong>1400 PennsylSUVia Ave,Washington DCwww.bestipsumhotel.com";
+
+		var myOptions = {
+			 content: boxText
+			,disableAutoPan: false
+			,maxWidth: 0
+			,pixelOffset: new google.maps.Size(-140, 0)
+			,zIndex: null
+			,closeBoxURL: ""
+			,infoBoxClearance: new google.maps.Size(1, 1)
+			,isHidden: false
+			,pane: "floatPane"
+			,enableEventPropagation: false
+		};
+
+		google.maps.event.addListener(marker, "click", function (e) {
+			ib.open(theMap, this);
+		});
+
+		var ib = new InfoBox(myOptions);
+		ib.open(theMap, marker);
+	}
+	</script>
+	
+	<script type="text/javascript">
+    	 $(document).ready(function() {
+            $('#image-gallery').lightSlider({
+                gallery:true,
+                item:1,
+                thumbItem:6,
+                slideMargin: 0,
+                speed:500,
+                auto:true,
+                loop:true,
+                onSliderLoad: function() {
+                    $('#image-gallery').removeClass('cS-hidden');
+                }  
+            });
+			
+			$('#gallery1,#gallery2,#gallery3,#gallery4').lightGallery({
+				download:false
+			});
+		});
+    </script>
+
 	<!-- TEMPLATE STYLES -->
 <!-- TEMPLATE STYLES -->
 <div id="template-styles">
