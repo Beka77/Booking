@@ -1,0 +1,132 @@
+{% extends 'homepage.html' %}
+{% load static %}
+{% block content %}
+	<!--- loading animation -->
+	<div class="loading">
+		<div class="ball"></div>
+		<div class="ball1"></div>
+	</div>
+	<!--- //loading animation -->
+	
+	{% include 'include/header.html' %}
+	
+	<!--main-->
+	<main class="main">		
+		<div class="wrap">
+			<div class="row">
+				<!--hotel three-fourth content-->
+				<section class="three-fourth">
+					<!--gallery-->
+					<div class="gallery">
+						<ul id="image-gallery" class="cS-hidden">
+							<li data-thumb="{{ cruise.porte.url }}"> 
+								<img src="{{ cruise.poster.url }}" alt="" />
+							</li>
+							
+							<!-- <li data-thumb="{{ hotel_image.image.url }}"> 
+								<img src="{{ hotel_image.image.url }}" alt="" />
+							</li> -->
+						</ul>
+					</div>
+					<!--gallery-->
+				
+					<!--inner navigation-->
+					<nav class="inner-nav">
+						<ul>
+							<li class="availability"><a href="#availability" title="Availability">Подробности</a></li>
+							<li class="description"><a href="#description" title="Description">Описание</a></li>
+							
+						</ul>
+					</nav>
+					<!--//inner navigation-->
+					<!--description-->
+					<section id="description" class="tab-content">
+						<article>
+							<h2>General</h2>
+							<div class="text-wrap">	
+								<p>{{ cruise.description }}</p>
+							</div>
+							
+							<h2>Регистрироваться</h2>
+							<div class="text-wrap">	
+								<p>С 15:00 часов </p>
+							</div>
+							
+							<h2>Проверить</h2>
+							<div class="text-wrap">	
+								<p>До 12:00 часов</p>
+							</div>
+							
+							<h2>Отмена / Предоплата</h2>
+							<div class="text-wrap">	
+								<p>Правила отмены бронирования и предоплаты зависят от типа номера. Пожалуйста, проверьте условия помещения при выборе номера.</p>
+							</div>
+							
+							<h2>Дети и дополнительные кровати</h2>
+							<div class="text-wrap">	
+								<p><strong>Бесплатно!</strong> Все дети в возрасте до 8 лет размещаются бесплатно на имеющихся кроватях.<strong>Бесплатно!</strong> Все дети в возрасте до 2 лет размещаются бесплатно на детских кроватках/колыбелях.С детей старшего возраста или взрослых на дополнительных кроватях взимается плата в размере 40 долларов США с человека за ночь.Максимальное количество дополнительных кроватей/детских кроваток, разрешенных в номере, - 1.Любой тип Дополнительная кровать или детская кроватка/колыбель предоставляются по запросу и должны быть подтверждены администрацией. Доплата не включается автоматически в общую стоимость и оплачивается отдельно при регистрации отъезда.</p>
+							</div>
+							
+							<h2>Питомцы</h2>
+							<div class="text-wrap">	
+								<p>Домашние животные разрешены. Может взиматься дополнительная плата.</p>
+							</div>
+							
+							<h2>Принимаемые кредитные карты</h2>
+							<div class="text-wrap">	
+								<p>American Express, Visa, Euro/Mastercard, Diners Club Отель оставляет за собой право преавторизации кредитной карты до прибытия.</p>
+							</div>
+						</article>
+					</section>
+					<!--//description-->
+					
+					
+					
+					<!--location-->
+					<section id="location" class="tab-content">
+						<article>
+							<!--map-->
+								<!-- <div class="gmap" id="map_canvas">
+									<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3328.5536593194793!2d72.80122972996568!3d40.538011938355226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38bdac011cc56779%3A0xa07af22cd6e2eb71!2zNDDCsDMyJzE4LjkiTiA3MsKwNDgnMDEuOSJF!5e0!3m2!1sru!2skg!4v1668954785121!5m2!1sru!2skg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+								</div> -->
+								
+							<!--//map-->
+						</article>
+					</section>
+					<!--//location-->
+				<!--sidebar-->
+				<aside class="one-fourth right-sidebar">
+					<!--hotel details-->
+					<article class="hotel-details">
+						
+					
+					<!--Need Help Booking?-->
+					<article class="widget">
+						<h4>Нужна помощь в бронировании?</h4>
+						<p>Позвоните в нашу службу поддержки клиентов по указанному ниже номеру, чтобы поговорить с одним из наших консультантов, который поможет вам со всеми вашими потребностями в отпуске.</p>
+						<p class="number">{{ setting.phone }}</p>
+					</article>
+					<!--//Need Help Booking?-->
+					
+					<!--Why Book with us?-->
+					<article class="widget">
+						<h4>Зачем бронировать у нас?</h4>
+						<h5>Низкие темпы</h5>
+						<p>Получите лучшие цены или получите возмещение. Никаких комиссий за бронирование. Экономить деньги!</p>
+						<h5>Самый большой выбор</h5>
+						<p>Более 140 000 отелей по всему миру 130+ авиакомпаний Более 3 миллионов отзывов гостей</p>
+						<h5>Мы всегда здесь</h5>
+						<p>Позвоните или напишите нам в любое время. Получите круглосуточную поддержку до, во время и после поездки.</p>
+					</article>
+					<!--//Why Book with us?-->
+				</aside>
+				<!--//sidebar-->
+			</div>
+			<!--//row-->
+		</div>
+	</main>
+	<!--//main-->
+	
+	<!--footer-->
+	{% include 'include/footer.html' %}
+	{% endblock %}

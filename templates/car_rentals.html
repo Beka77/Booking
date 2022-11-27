@@ -40,16 +40,17 @@
 					<div class="deals cars">
 						<div class="row">
 							<!--deal-->
-							{% for car in cars %}
+							
 							<article class="one-fourth">
 								<figure><a href="" title=""><img src="{{ car.photo.url }}" alt="" /></a></figure>
 								<div class="details">
 									<h3>{{ car.title }}</h3>
-									<span class="price">{{ car.description }} <em> {{ car.price }} | {{ car.currency }}</em> </span>
-									<a href="hotel.html" title="Book now" class="gradient-button">Хочу</a>
+									<span class="price">Цена на один день <em>$ {{ car.price }}</em> </span>
+									<span class="price">{{ car.description }}<em></em> </span>
+									<a href="{% url 'car_detail' car.id %}" title="Book now" class="gradient-button">Хочу</a>
 								</div>			
 							</article>
-							{% endfor %}
+							
 							<!--//deal-->
 						</div>
 					</div>	

@@ -7,21 +7,12 @@
             <article class="one-fourth">
                 <h6>Забронируйте путешествие</h6>
                 <p>1400 PennsylSUVia Ave. Washington, DC</p>
-                <p><em>P:</em> Круглосуточная поддержка клиентов: +996 778 010039</p>
+                <p><em></em class="number">Телефон:<a href="tel:+996 778 010039"> +996 778 010039</a></p>
                 <a href="mailto:bekakasymjanov@gmail.com" class="text-primary">support@gmail.com</a>
             </article>
             <!--//column-->
             
             <!--column-->
-            <article class="one-fourth">
-                <h6> Служба поддержки</h6>
-                <ul>
-                    <li><a href="#" title="Faq">Faq</a></li>
-                    <li><a href="#" title="How do I make a reservation?">Как сделать заказ?</a></li>
-                    <li><a href="#" title="Payment options">Варианты оплаты</a></li>
-                    <li><a href="#" title="Booking tips">Советы по бронированию</a></li>
-                </ul>
-            </article>
             <!--//column-->
             
             <!--column-->
@@ -38,15 +29,7 @@
             <!--//column-->
             
             <!--column-->
-            <article class="one-fourth">
-                <h6>Не пропустите наши эксклюзивные предложения</h6>
-                <form id="newsletter" action="newsletter.php" method="post">
-                    <fieldset>
-                        <input type="email" id="newsletter_signup" name="newsletter_signup" placeholder="Enter your email here" />
-                        <input type="submit" id="register" name="register"href="{% url 'register' %}" value="Signup" class="gradient-button" />
-                    </fieldset>
-                </form>
-            </article>
+
             <!--//column-->
             
             <div class="bottom full-width">
@@ -54,7 +37,7 @@
                 <nav>
                     <ul>
                         <li><a href="#" title="About us">About us</a></li>
-                        <li><a href="contact.html" title="Contact">Contact</a></li>
+                        <li><a href="{% url 'contact' %}" title="Contact">Contact</a></li>
                         <li><a href="#" title="Partners">Partners</a></li>
                         <li><a href="#" title="FAQ">FAQ</a></li>
                         <li><a href="#" title="Terms & Conditions">Terms &amp; Conditions</a></li>

@@ -32,7 +32,7 @@
         <div class="full-width">
           <!--deals-->
           <header class="s-title">
-            <h2>Most popular Cruises</h2>
+            <h2>Самые популярные круизы</h2>
           </header>
         
           <div class="deals">
@@ -56,7 +56,7 @@
                   <div class="description">
                     <p>{{ cruise.description }}<a href="hotel.html"></a></p>
                   </div>
-                  <a href="hotel.html" title="Book now" class="gradient-button">Хочу</a>
+                  <a href="{% url 'cruise_detail' cruise.id %}" title="Book now" class="gradient-button">Хочу</a>
                 </div>
               </article>
               {% endfor %}
